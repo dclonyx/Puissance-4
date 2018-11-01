@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* gestion de corps de page */
+
+html{
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    background-color: purple ;
+}
+
+section {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* gestion de texte H1*/
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: 1em;
+}
+
+#joueurActif {
+    margin-top: 2rem;
+}
+
+#vainqueur {
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+/* gestion tableau */
+
+table, td {
+    border: 1px solid black;
+    background-color: blue;
+}
+
+td {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: white
+}
+
+#flèche img {
+    width: 50%;
+    height: auto;
+} 
+
+/* gestion footer */
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+button {
+    width: 6rem;
+    height: 3rem;
+}
+
+button img {
+    width: 100%;
+    text-transform: uppercase;
+}
+
+#droite {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 1000px) {
+
+    td {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    h1 {
+        font-size: 4em;
+        color : blue;
+    }
+
+    h2 {
+        font-size: 2.5em;
+
+    }
+
+    button {
+        width: 12rem;
+        height: 6rem;
+        font-size: 2em;
+    }
+
+    section {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #droite {
+        width : 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #joueurActif {
+        font-size: 1.8em;
+    }
+    
+    #vainqueur {
+        font-size: 3em;
+    }
+    footer {
+        justify-content: center;
+        margin-top : 10rem;
+
+}
+
+
+
