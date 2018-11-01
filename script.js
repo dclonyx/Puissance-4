@@ -44,77 +44,30 @@ document.getElementById("grille").addEventListener("click", function(event){
     console.log(clickedCellElmt);
 
     pion();
+    color();
+    // fonctions pour savoir si gagant
+    victoireLigne();
+    victoireColonne();
+    victoireDiag1();
+    victoireDiag2();
+    afficherJoueurActif();
+    changementJoueur(); 
 
     function pion() {
         if (grille[6][clickedCellCoordY] == "vide" ) {
-                clickedCellCoordX = 6;
-                color();
-                victoireLigne();
-                victoireColonne();
-                victoireDiag1();
-                victoireDiag2();
-                afficherJoueurActif();
-                changementJoueur();       
-
+            clickedCellCoordX = 6;
         } else if (grille[5][clickedCellCoordY] == "vide" ) {
-                clickedCellCoordX = 5;
-                color();
-                victoireLigne();
-                victoireColonne();
-                victoireDiag1();
-                victoireDiag2();
-                afficherJoueurActif();
-                changementJoueur();
-    
+            clickedCellCoordX = 5;
         } else if (grille[4][clickedCellCoordY] == "vide" ) {
-                clickedCellCoordX = 4;
-                color();
-                victoireLigne();
-                victoireColonne();
-                victoireDiag1();
-                victoireDiag2();
-                afficherJoueurActif();
-                changementJoueur();
-
+            clickedCellCoordX = 4;
         } else if (grille[3][clickedCellCoordY] == "vide" ) {
-                clickedCellCoordX = 3;
-                color();
-                victoireLigne();
-                victoireColonne();
-                victoireDiag1();
-                victoireDiag2();
-                afficherJoueurActif();
-                changementJoueur();
-
+            clickedCellCoordX = 3;
         } else if (grille[2][clickedCellCoordY] == "vide" ) {
-                clickedCellCoordX = 2;
-                color();
-                victoireLigne();
-                victoireColonne();
-                victoireDiag1();
-                victoireDiag2();
-                afficherJoueurActif();
-                changementJoueur();
-
+            clickedCellCoordX = 2;
         } else if (grille[1][clickedCellCoordY] == "vide" ) {
-                clickedCellCoordX = 1;
-                color();
-                victoireLigne();
-                victoireColonne();
-                victoireDiag1();
-                victoireDiag2();
-                afficherJoueurActif();
-                changementJoueur();
-
+            clickedCellCoordX = 1;
         } else if (grille[0][clickedCellCoordY] == "vide" ) {
-                clickedCellCoordX = 0;
-                color();
-                victoireLigne();
-                victoireColonne();
-                victoireDiag1();
-                victoireDiag2();
-                afficherJoueurActif();
-                changementJoueur();
+            clickedCellCoordX = 0;
         }
     }
 
@@ -364,10 +317,7 @@ function afficherJoueurActif() {
             document.getElementById("joueurActif").innerHTML = ("AU JOUEUR JAUNE");
             document.getElementById("joueurActif").style.color = "yellow";
         }
-    } else {
-        document.getElementById("joueurActif").innerHTML = (" ");
     }
-
 }
 
 
@@ -377,8 +327,9 @@ function afficherJoueurActif() {
 
 function gagner() {
     if (joueurActif == 1) {
-        document.getElementById("vainqueur").innerHTML = ("JOUEUR JAUNE GAGNE !");
-        document.getElementById("vainqueur").style.color = "yellow";
+        document.getElementById("joueurActif").innerHTML = ("JOUEUR JAUNE GAGNE !");
+        document.getElementById("joueurActif").style.color = "yellow";
+        // comptage();
         for (var i=0; i<7; i++) {
             for(var j=0; j<7; j++) {
                 grille[i][j] = "plein";
@@ -386,8 +337,9 @@ function gagner() {
         win = true;
         }
     } else if (joueurActif == 2) {
-            document.getElementById("vainqueur").innerHTML = ("JOUEUR ROUGE GAGNE !");
-            document.getElementById("vainqueur").style.color = "red";
+            document.getElementById("joueurActif").innerHTML = ("JOUEUR ROUGE GAGNE !");
+            document.getElementById("joueurActif").style.color = "red";
+            // comptage();
             for (var i=0; i<7; i++) {
                 for(var j=0; j<7; j++) {
                     grille[i][j] = "plein";
@@ -413,6 +365,22 @@ function changementJoueur() {
     }
 }
 
+// fonction comptage
+
+// var joueurJaune = 0;
+// var joueurRouge = 0;
+
+// function comptage() {
+//     if (joueurActif == 1) {
+//         joueurJaune ++;
+//         document.getElementById("joueurJaune").innerHTML = joueurJaune;
+        
+//     } else if (joueurActif == 2) {
+//         joueurJaune ++;
+//         document.getElementById("joueurJaune").innerHTML = joueurRouge;
+//     }
+// }
+
 // bouton reset
 
 document.getElementById("nouvellePartie").addEventListener("click",reset);
@@ -426,7 +394,6 @@ function reset() {
             document.getElementById("cell" + i + j).style.backgroundColor="white";
         }    
     }
-    document.getElementById("vainqueur").innerHTML = " ";
     if (joueurActif ==1) {
         document.getElementById("joueurActif").innerHTML = ("AU JOUEUR JAUNE");
         document.getElementById("joueurActif").style.color = "yellow";
@@ -434,4 +401,5 @@ function reset() {
         document.getElementById("joueurActif").innerHTML = ("AU JOUEUR ROUGE");
         document.getElementById("joueurActif").style.color = "red";
     }
+    win = false;
 }

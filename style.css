@@ -41,9 +41,20 @@ h2 {
     margin-top: 2rem;
 }
 
-#vainqueur {
+#compteur {
     margin-top: 2rem;
     font-weight: bold;
+    display: flex;
+}
+
+#compteurJaune {
+    color: yellow;
+    margin: 0 3rem;
+}
+
+#compteurRouge {
+    color: red;
+    margin: 0 3rem;
 }
 
 /* gestion tableau */
@@ -104,7 +115,6 @@ button img {
 
     h2 {
         font-size: 2.5em;
-
     }
 
     button {
@@ -129,14 +139,20 @@ button img {
         font-size: 1.8em;
     }
     
-    #vainqueur {
+    #compteur {
         font-size: 3em;
     }
+
+    #compteurJaune {
+        margin: 0 5rem;
+    }
+
+    #compteurRouge {
+        margin: 0 5rem;
+    }
+
     footer {
         justify-content: center;
-        margin-top : 10rem;
-
+        margin-top : 5rem;
+    }
 }
-
-
-
