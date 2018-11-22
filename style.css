@@ -11,7 +11,7 @@ html{
 
 body {
     width: 100%;
-    background-color: purple ;
+    background-color: rgb(190, 190, 190) ;
 }
 
 section {
@@ -30,6 +30,7 @@ h1 {
     font-size: 2.5em;
     text-align: center;
     margin: 2rem 0;
+    color : blue;
 }
 
 h2 {
@@ -88,6 +89,13 @@ footer {
 button {
     width: 6rem;
     height: 3rem;
+    border-radius: 25px;
+    background-color: rgb(161, 203, 236);
+    box-shadow: 5px 5px 5px black;
+}
+
+button:focus{
+    outline-style:none;
 }
 
 button img {
@@ -101,20 +109,24 @@ button img {
     flex-direction: column;
 }
 
+@media screen and (min-width: 600px) {
+
+    td {
+        width: 3rem;
+        height: 3rem;
+    }
+
 @media screen and (min-width: 1000px) {
 
     td {
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
     }
 
     h1 {
         font-size: 4em;
         color : blue;
-    }
-
-    h2 {
-        font-size: 2.5em;
+        margin: 3rem 0;
     }
 
     button {
@@ -136,7 +148,7 @@ button img {
     }
 
     #joueurActif {
-        font-size: 1.8em;
+        font-size: 2em;
     }
     
     #compteur {
@@ -154,5 +166,28 @@ button img {
     footer {
         justify-content: center;
         margin-top : 5rem;
+    }
+
+    #gauche{
+        margin-left: 5rem;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+
+    td {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    h1{
+        font-size: 6rem;
+    }
+    #joueurActif {
+        font-size: 3em;
+    }
+
+    #gauche{
+        margin-left: 12rem;
     }
 }

@@ -42,7 +42,7 @@ document.getElementById("grille").addEventListener("click", function(event){
 
     console.log(grille);
     console.log(clickedCellElmt);
-
+    
     pion();
     color();
     // fonctions pour savoir si gagant
@@ -90,7 +90,7 @@ document.getElementById("grille").addEventListener("click", function(event){
                 compteur ++;
             }
             if (compteur >= 4) {
-                gagner();; 
+                gagner();
             } 
 
         } else if (joueurActif == 2) {
@@ -192,7 +192,7 @@ document.getElementById("grille").addEventListener("click", function(event){
                 }
             }
              if (compteur >= 4) {
-                gagner();
+                gagner()
              }
 
         } else if (joueurActif == 2) {
@@ -365,7 +365,7 @@ function changementJoueur() {
     }
 }
 
-// fonction comptage
+// // fonction comptage
 
 // var joueurJaune = 0;
 // var joueurRouge = 0;
@@ -373,11 +373,11 @@ function changementJoueur() {
 // function comptage() {
 //     if (joueurActif == 1) {
 //         joueurJaune ++;
-//         document.getElementById("joueurJaune").innerHTML = joueurJaune;
+//         document.getElementById("joueurJaune").innerHTML = (""+joueurJaune+"");
         
 //     } else if (joueurActif == 2) {
 //         joueurJaune ++;
-//         document.getElementById("joueurJaune").innerHTML = joueurRouge;
+//         document.getElementById("joueurJaune").innerHTML = (""+joueurRouge+"");
 //     }
 // }
 
