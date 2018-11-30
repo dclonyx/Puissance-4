@@ -391,7 +391,7 @@ function reset() {
     for (var i=0; i<7; i++){
         for(var j=0; j<7; j++){
             grille[i][j] = "vide";
-            document.getElementById("cell" + i + j).style.backgroundColor="white";
+            document.getElementById("cell" + i + j).style.backgroundColor="rgba(255, 255, 255, 0.5)";
         }    
     }
     if (joueurActif ==1) {
