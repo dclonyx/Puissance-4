@@ -2,27 +2,16 @@
 
 var grille = new Array(7);
 
-for (var i = 0; i < 7; i++)
-{
- grille[i] = new Array(7);
+for (var i = 0; i < 7; i++){
+    grille[i] = new Array(7);
 }
 // rempli le tableau de "vide"
 for (var i=0; i<7; i++){
-   for(var j=0; j<7; j++){
-      grille[i][j] = "vide";
+    for(var j=0; j<7; j++){
+        grille[i][j] = "vide";
     }  
 }   
 
-////////////////////////////////////////////////
-
-
-// var col1 = document.getElementById("col1");
-// var col2 = document.getElementById("col2");
-// var col3 = document.getElementById("col3");
-// var col4 = document.getElementById("col4");
-// var col5 = document.getElementById("col5");
-// var col6 = document.getElementById("col6");
-// var col7 = document.getElementById("col7");
 var win = false;
 afficherJoueurActif();
 
@@ -31,15 +20,12 @@ document.getElementById("grille").addEventListener("click", function(event){
     var clickedCellName;
     var clickedCellCoordX;
     var clickedCellCoordY;
-    
 
     clickedCellElmt = document.getElementById(event.target.id); //enregistre l'élément enfant du DOM qui a été cliquée.
     clickedCellName = event.target.id; //renvoie l'id de la cellule cliquée sous forme de string(chaine de caractère)
-    // clickedCellCoordX = parseInt(clickedCellName[0]); // récupère le 2eme caractère dans l'ID
     clickedCellCoordY = parseInt(clickedCellName[5]); // récupère le 2eme caractère dans l'ID
     console.log(" Y : " + clickedCellCoordY);
     console.log("clickedCell : " + clickedCellName);
-
     console.log(grille);
     console.log(clickedCellElmt);
     
@@ -81,7 +67,6 @@ document.getElementById("grille").addEventListener("click", function(event){
         var ligne = clickedCellCoordX;
         var colonne = clickedCellCoordY;
         if (joueurActif == 1) {
-            
             while (grille[ligne][colonne] == "jaune") {
                 colonne ++;
             } 
@@ -92,9 +77,7 @@ document.getElementById("grille").addEventListener("click", function(event){
             if (compteur >= 4) {
                 gagner();
             } 
-
-        } else if (joueurActif == 2) {
-               
+        } else if (joueurActif == 2) { 
             while (grille[ligne][colonne] == "rouge") {
                 colonne ++;
             } 
@@ -105,7 +88,7 @@ document.getElementById("grille").addEventListener("click", function(event){
             if (compteur >= 4) {
                 gagner();
             }
-            }
+        }
     }
 
 // verif colonne
@@ -116,11 +99,10 @@ document.getElementById("grille").addEventListener("click", function(event){
         var colonne = clickedCellCoordY;
 
         if (joueurActif == 1) {
-
             while (grille[ligne][colonne] == "jaune") {
                 if (ligne != 6) {
                     ligne ++
-                }else { 
+                } else { 
                     ligne ++;
                     break;
                 } 
@@ -137,9 +119,7 @@ document.getElementById("grille").addEventListener("click", function(event){
             if (compteur >= 4) {
                 gagner();
                 }
-
         } else if (joueurActif == 2) {
-
             while (grille[ligne][colonne] == "rouge") {
                 if (ligne != 6) {
                     ligne ++
@@ -170,7 +150,6 @@ document.getElementById("grille").addEventListener("click", function(event){
         var ligne = clickedCellCoordX;
         var colonne = clickedCellCoordY;
         if (joueurActif == 1) {
-             
             while (grille[ligne][colonne] == "jaune") {
                 if (ligne != 6 && colonne != 6) {
                     colonne ++;
@@ -201,7 +180,7 @@ document.getElementById("grille").addEventListener("click", function(event){
                 if (ligne != 6 && colonne != 6) {
                     colonne ++;
                     ligne ++;
-                }else {
+                } else {
                     colonne ++;
                     ligne ++;
                     break;
@@ -230,7 +209,6 @@ document.getElementById("grille").addEventListener("click", function(event){
         var ligne = clickedCellCoordX;
         var colonne = clickedCellCoordY;
          if (joueurActif == 1) {
-
             while (grille[ligne][colonne] == "jaune") {
                 if (ligne != 6 && colonne != 0) {                
                     colonne --;
@@ -255,7 +233,6 @@ document.getElementById("grille").addEventListener("click", function(event){
                 gagner();
             }
         } else if (joueurActif == 2) {
-            
             while (grille[ligne][colonne] == "rouge") {
                 if (ligne != 6 && colonne != 0) {                
                     colonne --;
@@ -295,13 +272,7 @@ document.getElementById("grille").addEventListener("click", function(event){
             console.log(grille[clickedCellCoordX][clickedCellCoordY]);
         }
     }
-
-
-
-    
-
 });
-
 
 // fonction affichage joueur
 
@@ -313,17 +284,14 @@ function afficherJoueurActif() {
         } else if (joueurActif == 2) {
             document.getElementById("joueurActif").innerHTML = ("AU JOUEUR JAUNE");
             document.getElementById("joueurActif").style.color = "yellow";
-        } else{
+        } else {
             document.getElementById("joueurActif").innerHTML = ("AU JOUEUR JAUNE");
             document.getElementById("joueurActif").style.color = "yellow";
         }
     }
 }
 
-
 // fonction affichage vainqueur + raz
-
-    
 
 function gagner() {
     if (joueurActif == 1) {
@@ -364,22 +332,6 @@ function changementJoueur() {
         joueur = true;
     }
 }
-
-// // fonction comptage
-
-// var joueurJaune = 0;
-// var joueurRouge = 0;
-
-// function comptage() {
-//     if (joueurActif == 1) {
-//         joueurJaune ++;
-//         document.getElementById("joueurJaune").innerHTML = (""+joueurJaune+"");
-        
-//     } else if (joueurActif == 2) {
-//         joueurJaune ++;
-//         document.getElementById("joueurJaune").innerHTML = (""+joueurRouge+"");
-//     }
-// }
 
 // bouton reset
 
